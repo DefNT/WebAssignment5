@@ -1,0 +1,84 @@
+body {
+  background-color: #efefef;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  margin-top: 30px;
+}
+
+.column {
+  width: 300px;
+}
+
+.form-card {
+  background: white;
+  padding: 25px;
+}
+
+.form-card label {
+  display: block;
+  font-size: 13px;
+  color: gray;
+  margin: 10px 0 5px;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  background-color: #efefef;
+  border: 1px solid #ccc;
+}
+
+.form-card button {
+  background-color: #4444f5;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  margin: 20px 0 0;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.task {
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
+
+.task-header button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin: 0;
+  padding: 0 4px;
+}
+
+.done-btn { color: gray; }
+.delete-btn { color: red; }
+
+.task p {
+  font-size: 13px;
+  color: gray;
+}
+
+.completed .task-title,
+.completed p {
+  text-decoration: line-through;
+  color: #aaa;
+}
