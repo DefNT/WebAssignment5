@@ -11,4 +11,4 @@
 - Task 7: Calculator
 - Task 8: To-Do app
 
-Gitpages: https://defnt.github.io/WebAssignment5/task8/index.html
+Gitpages: https://defnt.github.io/WebAssignment5/task0/index.html
