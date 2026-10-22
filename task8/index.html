@@ -19,28 +19,13 @@
         <a href="../task8/index.html" class="active">Task 8</a>
     </nav>
 
-  
-    <div class="container">
+    <main class="content">
+        <h1>My Tasks</h1>
+        <input type="text" id="taskInput" placeholder="Write a task...">
+        <button id="addBtn">Add Task</button>
+        <ul id="taskList"></ul>
+    </main>
 
-        <div class="column">
-            <h3>To-do list</h3>
-            <div id="taskList"></div>
-        </div>
-
-        <div class="column">
-            <h3>Add new task</h3>
-            <div class="form-card">
-                <label for="title">Title</label>
-                <input type="text" id="title">
-
-                <label for="description">Description</label>
-                <textarea id="description" rows="8"></textarea>
-
-                <button id="addTask">Add task</button>
-            </div>
-        </div>
-    </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,84 +1,31 @@
-body {
-  background-color: #efefef;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 80px;
-  margin-top: 30px;
-}
-
-.column {
-  width: 300px;
-}
-
-.form-card {
-  background: white;
-  padding: 25px;
-}
-
-.form-card label {
-  display: block;
-  font-size: 13px;
-  color: gray;
-  margin: 10px 0 5px;
-}
-
-.form-card input,
-.form-card textarea {
-  width: 100%;
-  box-sizing: border-box;
+input {
   padding: 8px;
-  background-color: #efefef;
-  border: 1px solid #ccc;
+  width: 250px;
 }
 
-.form-card button {
-  background-color: #4444f5;
-  color: white;
-  border: none;
-  padding: 12px 40px;
-  margin: 20px 0 0;
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
 }
 
-textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-.task {
-  background: white;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.task-header {
+li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 8px;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 4px;
+  cursor: pointer;
 }
 
-.task-header button {
-  background: none;
+li button {
+  background-color: tomato;
+  color: white;
   border: none;
-  font-size: 16px;
-  margin: 0;
-  padding: 0 4px;
+  border-radius: 4px;
 }
 
-.done-btn { color: gray; }
-.delete-btn { color: red; }
-
-.task p {
-  font-size: 13px;
-  color: gray;
-}
-
-.completed .task-title,
-.completed p {
+.done {
   text-decoration: line-through;
-  color: #aaa;
+  color: gray;
 }

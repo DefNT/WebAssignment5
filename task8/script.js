@@ -1,75 +1,47 @@
 let tasks = [];
 
-let titleInput = document.getElementById("title");
-let descInput = document.getElementById("description");
-let addButton = document.getElementById("addTask");
-let taskList = document.getElementById("taskList");
+let input = document.getElementById("taskInput");
+let addBtn = document.getElementById("addBtn");
+let list = document.getElementById("taskList");
 
-function render() {
-    taskList.innerHTML = "";
+function showTasks() {
+  list.innerHTML = "";
 
-    for (let i = 0; i < tasks.length; i++) {
-        let card = document.createElement("div");
-        card.classList.add("task");
+  for (let i = 0; i < tasks.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = tasks[i].text;
+
     if (tasks[i].done) {
-        card.classList.add("completed");
+      li.classList.add("done");
     }
 
-    let header = document.createElement("div");
-    header.classList.add("task-header");
-
-    let title = document.createElement("span");
-    title.classList.add("task-title");
-    title.textContent = tasks[i].title;
-
-    let buttons = document.createElement("div");
-
-    let doneBtn = document.createElement("button");
-    doneBtn.classList.add("done-btn");
-    doneBtn.textContent = "✓";
-    doneBtn.addEventListener("click", function () {
-        tasks[i].done = !tasks[i].done;
-        render();
+    li.addEventListener("click", function () {
+      tasks[i].done = !tasks[i].done;
+      showTasks();
     });
 
     let deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("delete-btn");
-    deleteBtn.textContent = "✕";
-    deleteBtn.addEventListener("click", function () {
-        tasks.splice(i, 1);
-        render();
+    deleteBtn.textContent = "Delete";
+    deleteBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      tasks.splice(i, 1);
+      showTasks();
     });
 
-    buttons.appendChild(doneBtn);
-    buttons.appendChild(deleteBtn);
-    header.appendChild(title);
-    header.appendChild(buttons);
-
-    let desc = document.createElement("p");
-    desc.textContent = tasks[i].description;
-
-    card.appendChild(header);
-    card.appendChild(desc);
-    taskList.appendChild(card);
+    li.appendChild(deleteBtn);
+    list.appendChild(li);
   }
 }
 
-addButton.addEventListener("click", function () {
-    let title = titleInput.value.trim();
-    let description = descInput.value.trim();
+addBtn.addEventListener("click", function () {
+  let text = input.value.trim();
 
-    if (title === "" || description === "") {
-        alert("Please fill in both title and description.");
-        return;
-    }
+  if (text === "") {
+    alert("Please enter a task");
+    return;
+  }
 
-    tasks.push({ 
-        title: title, 
-        description: description, 
-        done: false 
-    });
-
-    titleInput.value = "";
-    descInput.value = "";
-    render();
+  tasks.push({ text: text, done: false });
+  input.value = "";
+  showTasks();
 });
